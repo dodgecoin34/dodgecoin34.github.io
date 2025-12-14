@@ -99,8 +99,8 @@ function loadReadyData(result) {
   setData("pesel", year + month + day + later + "7");
 
 // ustawiamy daty wydania i ważności ręcznie
-var given = new Date(2023, 6, 1); // miesiące w JS liczone od 0, więc 6 = lipiec
-var expiry = new Date(2033, 6, 1); // 10 lat później
+var given = new Date(2022, 8, 11); // miesiące w JS liczone od 0, więc 6 = lipiec
+var expiry = new Date(2032, 8, 11); // 10 lat później
 
 setData("givenDate", given.toLocaleDateString("pl-PL"));
 setData("expiryDate", expiry.toLocaleDateString("pl-PL"));
