@@ -98,14 +98,12 @@ function loadReadyData(result) {
   var year = result.year.toString().substring(2);
   setData("pesel", year + month + day + later + "7");
 
-  // daty wydania i ważności
-  var today = new Date();
-  var given = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  given.setFullYear(given.getFullYear() + 18);
-  var expiry = new Date(given);
-  expiry.setFullYear(expiry.getFullYear() + 10);
-  setData("givenDate", given.toLocaleDateString("pl-PL"));
-  setData("expiryDate", expiry.toLocaleDateString("pl-PL"));
+// ustawiamy daty wydania i ważności ręcznie
+var given = new Date(2023, 6, 1); // miesiące w JS liczone od 0, więc 6 = lipiec
+var expiry = new Date(2033, 6, 1); // 10 lat później
+
+setData("givenDate", given.toLocaleDateString("pl-PL"));
+setData("expiryDate", expiry.toLocaleDateString("pl-PL"));
 
   // homeDate
   if (!localStorage.getItem("homeDate")) {
